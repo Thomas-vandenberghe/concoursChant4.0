@@ -1,7 +1,7 @@
 <?php
 session_start();
-	 
-	 $db = new PDO('mysql:host=localhost;dbname=concoursChant', 'chant', '01021991');
+$db = new PDO('mysql:host=eu-cdbr-west-01.cleardb.com;dbname=heroku_7caa586e0380adf;', 'b41a5dc6242a82' , 'df1cc1fa');
+	// $db = new PDO('mysql:host=localhost;dbname=concoursChant', 'chant', '01021991');
 	//$db = new PDO('mysql:host=localhost:3307;dbname=concoursChant', 'chant', '01021991');
 	
 
@@ -150,7 +150,6 @@ echo"
     <p style=" color:red; font-size:19px;"><b>CETTE CHANSON A ETE REJETEE PAR L'ADMINISTRATEUR, VOUS POUVEZ FAIRE UNE NOUVELLE DEMANDE.</b>. </p>
 
     <?php } ?>
-
 
     <h2>Choix de votre chanson pour le concours.</h2>  
 <div class="submitContainer">
