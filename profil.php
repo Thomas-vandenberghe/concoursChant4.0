@@ -4,8 +4,8 @@ $db = new PDO('mysql:host=eu-cdbr-west-01.cleardb.com;dbname=heroku_7caa586e0380
 	// $db = new PDO('mysql:host=localhost;dbname=concoursChant', 'chant', '01021991');
 	//$db = new PDO('mysql:host=localhost:3307;dbname=concoursChant', 'chant', '01021991');
 	?>
-   
-<html lang="en">
+  
+  <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -140,7 +140,9 @@ if($fichierRejet == "OUI"){
     $pseudoSession=$_SESSION['pseudo'];
     $query=$db->prepare("UPDATE songs SET fichier = '$nomfichier' WHERE pseudo='$pseudoSession'");
     $query->execute();
-    }
+    $query1=$db->prepare("UPDATE songs SET rejeter2 = 'NON' WHERE pseudo='$pseudoSession'");
+    $query1->execute();
+}
      ?>
 </div>
 </div>
