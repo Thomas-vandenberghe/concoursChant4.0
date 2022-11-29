@@ -1,7 +1,7 @@
 <?php
 session_start();
-$db = new PDO('mysql:host=eu-cdbr-west-01.cleardb.com;dbname=heroku_7caa586e0380adf', 'b41a5dc6242a82' , 'df1cc1fa');
-	//$db = new PDO('mysql:host=localhost;dbname=concoursChant', 'chant', '01021991');
+// $db = new PDO('mysql:host=eu-cdbr-west-01.cleardb.com;dbname=heroku_7caa586e0380adf', 'b41a5dc6242a82' , 'df1cc1fa');
+	$db = new PDO('mysql:host=localhost;dbname=concoursChant', 'chant', '01021991');
 ?>
 
 <html lang="en">
@@ -68,7 +68,7 @@ $srcdatafichier= "$src$datafichier";
 $audio="<audio controls $srcdatafichier' $type";
 
 
-echo'<tr><td id='.$pseudotab.'>'.$data['pseudo'].'</td><td>'.$data['song'].'</td><td>  <input type="checkbox" id='.btn.$pseudotab.' name='.btn.$pseudotab.' >'.$data['verif1'].'</td> <td>  <input type="checkbox" id='.btn2.$pseudotab.' name='.btn2.$pseudotab.' >'.$data['rejeter'].'</td><td>'.$audio.'</td><td>  <input type="checkbox" id='.btn3.$pseudotab.' name='.btn3.$pseudotab.' >'.$data['verif2'].'</td> <td>  <input type="checkbox" id='.btn4.$pseudotab.' name='.btn4.$pseudotab.' >'.$data['rejeter2'].'</td></tr>';
+echo'<tr><td id='.$pseudotab.'>'.$data['pseudo'].'</td><td>'.$data['song'].'</td><td>  <input type="checkbox" id='.'btn'.$pseudotab.' name='.'btn'.$pseudotab.' >'.$data['verif1'].'</td> <td>  <input type="checkbox" id='.'btn2'.$pseudotab.' name='.'btn2'.$pseudotab.' >'.$data['rejeter'].'</td><td>'.$audio.'</td><td>  <input type="checkbox" id='.'btn3'.$pseudotab.' name='.'btn3'.$pseudotab.' >'.$data['verif2'].'</td> <td>  <input type="checkbox" id='.'btn4'.$pseudotab.' name='.'btn4'.$pseudotab.' >'.$data['rejeter2'].'</td></tr>';
 
 if($_POST["btn$pseudotab"]){
 $query2=$db->prepare("UPDATE songs SET verif1= 'OUI', rejeter='NON' WHERE pseudo ='$pseudotab'");
